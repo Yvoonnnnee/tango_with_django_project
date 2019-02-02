@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.core.urlresolvers import reverse
 
 from django.http import HttpResponse
 
@@ -9,6 +10,7 @@ def index(request):
 	category_list = Category.objects.order_by('-likes')[:5]
 	pages_list = Page.objects.order_by('-views')[:5]
 	context_dict = {'categories':category_list, 'pages': pages_list}
+	# return render(request, reverse('index'), context=context_dict)
 	return render(request, 'rango/index.html', context=context_dict)
 
 def about(request):
