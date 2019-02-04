@@ -25,7 +25,7 @@
 				<li><a href="{% url 'rango:add_category' %}">Add New Category</a></li>
 				<li><a href="{% url 'rango:restricted' %}">Restricted page for logged in users only</a></li>
 			{% else %}
-				<li><a href="{% url 'rango:login' %}">Login</a></li>
+				<li><a href="{% url 'rango:login' %}">Sign in</a></li>
 				<li><a href="{% url 'rango:register' %}">Sign Up</a></li>
 			{% endif %}
 				<li><a href="{% url 'rango:about' %}">About</a></li>
