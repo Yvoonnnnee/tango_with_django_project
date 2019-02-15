@@ -2,13 +2,14 @@
 
 {% extends 'rango/base.html' %}
 {% load staticfiles %}
+{% load bootstrap_toolkit %}
 
 {% block title_block %}
 	Add a category
 {% endblock %}
 
 {% block body_block %}
-	<form role="form" id="category_form" method="post" action="{% url 'rango:add_category' %}">
+	<form id="category_form" method="post" action="{% url 'rango:add_category' %}">
 		<h2 class="form-signing-heading">
 			Add a category!
 		</h2>
