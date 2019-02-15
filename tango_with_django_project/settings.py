@@ -23,6 +23,11 @@ MEDIA_URL = '/media/'
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
+REGISTRATION_OPEN = True # Means users can register
+ACCOUNT_ACTIVATION_DAYS = 7 # There is a one-week activation window
+REGISTRATION_AUTO_LOGIN = True # the user will be automatically logged in
+LOGIN_REDIRECT_URL = '/rango/' # the page you want users to arrive at after they successfully log in
+LOGIN_URL = '/accounts/login/'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -46,6 +51,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rango',
+    'registration',
+    'bootstrap_toolkit'
 ]
 
 MIDDLEWARE = [
@@ -116,9 +123,6 @@ PASSWORD_HASHERS = (
     'django.contrib.auth.hashers.PBKDF2PasswordHasher',
     'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',    
 )
-
-LOGIN_URL = '/rango/login/'
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
